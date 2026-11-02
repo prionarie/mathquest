@@ -1,7 +1,7 @@
 <?php
 session_start();
-require __DIR__ . '/../config/dbcon.php';
-include __DIR__ . '/dashboard/recent_activities.php';
+require '../config/dbcon.php';
+include 'dashboard/recent_activities.php';
 
 if (!isset($_SESSION['teacher_id'])) {
     header('Location: login.php');
