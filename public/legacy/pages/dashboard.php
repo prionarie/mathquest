@@ -1,7 +1,7 @@
 <?php
 session_start();
-require '../../config/dbcon.php';
-include 'dashboard/recent_activities.php';
+require __DIR__ . '/../config/dbcon.php';
+include __DIR__ . '/dashboard/recent_activities.php';
 
 if (!isset($_SESSION['teacher_id'])) {
     header('Location: login.php');
@@ -134,7 +134,7 @@ if (!empty($sections)) {
     <title>Teacher Dashboard | MathQuest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/teacher/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/teacher/dashboard.css">
 </head>
 
 <body>
@@ -188,7 +188,7 @@ if (!empty($sections)) {
         <main class="main-content">
             <div class="welcome-banner">
                 <h2 id="welcome-message">Teacher Dashboard - Manage Your Math Classes</h2>
-                <p>Welcome to your MathQuest Teacher Portal. Monitor your student's<br>progress, create and upload learning materials, and manage<br>your Grade 3 Mathematics classes all in one place.</p>
+                <p>Welcome to your MathQuest Teacher Portal. Monitor your student's<br>progress, create and upload learning materials, and manage<br>your Grade 6 Mathematics classes all in one place.</p>
             </div>
 
             <header class="top-header">
@@ -272,8 +272,8 @@ if (!empty($sections)) {
 
         </main>
     </div>
-    <script src="../../assets/js/teacher/sidebar.js"></script>
-    <script src="../../assets/js/teacher/dashboard.js"></script>
+    <script src="../assets/js/teacher/sidebar.js"></script>
+    <script src="../assets/js/teacher/dashboard.js"></script>
 </body>
 
 </html>

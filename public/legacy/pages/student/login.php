@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
                 <div class="form-footer">
-                    <p>MathQuest © 2025 | [PLACEHOLDER] Elementary School</p>
+                    <p>MathQuest © 2025 | Mapaniqui Elementary School</p>
                 </div>
             </div>
         </div>

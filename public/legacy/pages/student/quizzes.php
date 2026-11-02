@@ -30,6 +30,7 @@ if (!$student) {
 
 $student_name = trim($student['first_name'] . ' ' . $student['last_name']);
 $_SESSION['student_name'] = $student_name;
+
 $sidebar_initials = strtoupper(
     substr($student['first_name'], 0, 1) . substr($student['last_name'], 0, 1)
 );
@@ -61,10 +62,9 @@ $sql = "
         qs.assigned_date,
         qs.due_date,
         qs.is_active,
-        sq.score,
-        sq.date_taken,
+        MAX(sq.score) AS score,
+        MAX(sq.date_taken) AS date_taken,
         COUNT(DISTINCT qq.question_id) as question_count,
-        -- Check if student has any quiz attempts for this quiz
         (
             SELECT COUNT(*) 
             FROM quiz_attempts qa 
@@ -72,7 +72,6 @@ $sql = "
             AND qa.student_id = ? 
             AND qa.is_completed = 1
         ) as completed_questions,
-        -- Get the completion time from quiz_attempts
         (
             SELECT MAX(qa.timestamp) 
             FROM quiz_attempts qa 
@@ -88,7 +87,7 @@ $sql = "
       AND qs.is_active = 1
       AND q.quiz_type IN ($allowed_types_placeholder)
     GROUP BY q.quiz_id, q.quarter, q.week, q.quiz_type, q.date_created, 
-             qs.assigned_date, qs.due_date, qs.is_active, sq.score, sq.date_taken
+             qs.assigned_date, qs.due_date, qs.is_active
     ORDER BY 
         CASE 
             WHEN q.quarter = ? AND q.week = ? THEN 0
@@ -190,7 +189,7 @@ $total_earned = 0;
 $total_possible = 0;
 
 $stmt = $conn->prepare("
-    SELECT sq.score, SUM(qs_question.points) AS total_quiz_points
+    SELECT MAX(sq.score) AS score, SUM(qs_question.points) AS total_quiz_points
     FROM student_quizzes sq
     JOIN quiz_questions qq ON sq.quiz_id = qq.quiz_id
     JOIN questions qs_question ON qq.question_id = qs_question.question_id

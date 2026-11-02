@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../config/dbcon.php';
+require __DIR__ . '/../config/dbcon.php';
 
 $login_error = '';
 
@@ -50,7 +50,7 @@ $conn->close();
     <title>Login | MathQuest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 
 <body>
@@ -115,7 +115,7 @@ $conn->close();
                     </div>
 
                     <div class="form-footer">
-                        <p>MathQuest © 2025 | [PLACEHOLDER] Elementary School</p>
+                        <p>MathQuest © 2025 | Mapaniqui Elementary School</p>
                     </div>
                 </form>
             </div>
@@ -151,10 +151,10 @@ $conn->close();
                 </div>
 
                 <div class="form-footer">
-                    <p>MathQuest © 2023 | [PLACEHOLDER] Elementary School</p>
+                    <p>MathQuest © 2023 | Mapaniqui Elementary School</p>
                 </div>
             </div>
-    <script src="../../assets/js/teacher/login.js"></script>
+    <script src="../assets/js/teacher/login.js"></script>
 </body>
 
 </html>

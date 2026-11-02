@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../config/dbcon.php';
+require '../config/dbcon.php';
 
 if (!isset($_SESSION['teacher_id'])) {
     header('Location: login.php');
@@ -273,7 +273,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_passcode'])) {
     <title>View Student Profile | MathQuest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/teacher/student_profile.css">
+    <link rel="stylesheet" href="../assets/css/teacher/student_profile.css">
 </head>
 
 <body>
@@ -658,8 +658,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_passcode'])) {
         </div>
     </div>
 
-    <script src="../../assets/js/teacher/sidebar.js"></script>
-    <script src="../../assets/js/teacher/student_profile.js"></script>
+    <script src="../assets/js/teacher/sidebar.js"></script>
+    <script src="../assets/js/teacher/student_profile.js"></script>
     <script>
         <?php if (isset($_GET['updated']) && $_GET['updated'] == 1): ?>
             document.addEventListener('DOMContentLoaded', function() {

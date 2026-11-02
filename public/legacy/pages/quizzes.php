@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../config/dbcon.php';
+require '../config/dbcon.php';
 
 if (!isset($_SESSION['teacher_id'])) {
     header('Location: login.php');
@@ -206,7 +206,7 @@ if (isset($_GET['delete_quiz'])) {
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/teacher/quizzes.css">
+    <link rel="stylesheet" href="../assets/css/teacher/quizzes.css">
 </head>
 <body>
     <div class="container">
@@ -501,8 +501,8 @@ if (isset($_GET['delete_quiz'])) {
     </div>
 
 
-    <script src="../../assets/js/teacher/sidebar.js"></script>
-    <script src="../../assets/js/teacher/quizzes.js"></script>
+    <script src="../assets/js/teacher/sidebar.js"></script>
+    <script src="../assets/js/teacher/quizzes.js"></script>
 </body>
 </html>
 

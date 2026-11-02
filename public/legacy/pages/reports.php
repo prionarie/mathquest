@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../config/dbcon.php';
+require '../config/dbcon.php';
 
 if (!isset($_SESSION['teacher_id'])) {
     header('Location: logout.php');
@@ -254,7 +254,6 @@ while ($row = $result->fetch_assoc()) {
 }
 $performance_stmt->close();
 
-// Learner category distribution WITH FILTERS
 $category_sql = "
     SELECT s.learner_category, COUNT(*) as student_count
     FROM students s
@@ -265,15 +264,18 @@ $category_sql = "
 
 if ($selected_section) {
     $category_sql .= " AND s.section_id = ?";
-    $category_stmt = $conn->prepare($category_sql);
-    $category_stmt->bind_param("ii", $teacher_id, $selected_section);
-} else {
-    $category_stmt = $conn->prepare($category_sql);
-    $category_stmt->bind_param("i", $teacher_id);
 }
 
 $category_sql .= " GROUP BY s.learner_category
     ORDER BY FIELD(s.learner_category, 'Slow Learner', 'Average Learner', 'Fast Learner')";
+
+$category_stmt = $conn->prepare($category_sql);
+
+if ($selected_section) {
+    $category_stmt->bind_param("ii", $teacher_id, $selected_section);
+} else {
+    $category_stmt->bind_param("i", $teacher_id);
+}
 
 $category_stmt->execute();
 $category_labels = $category_counts = $category_colors = [];
@@ -512,16 +514,33 @@ $completion_sql = "
     WHERE sec.teacher_id = ? AND sec.archived = 0
 ";
 
+$completion_sql = "
+    SELECT 
+        sec.section_id,
+        sec.section_name,
+        COUNT(DISTINCT s.student_id) as total_students,
+        COUNT(DISTINCT sq.student_id) as students_with_quizzes,
+        ROUND((COUNT(DISTINCT sq.student_id) / COUNT(DISTINCT s.student_id)) * 100, 1) as completion_rate
+    FROM sections sec
+    LEFT JOIN students s ON sec.section_id = s.section_id AND s.archived = 0
+    LEFT JOIN student_quizzes sq ON s.student_id = sq.student_id
+    WHERE sec.teacher_id = ? AND sec.archived = 0
+";
+
 if ($selected_section) {
     $completion_sql .= " AND sec.section_id = ?";
-    $completion_stmt = $conn->prepare($completion_sql);
-    $completion_stmt->bind_param("ii", $teacher_id, $selected_section);
-} else {
-    $completion_stmt = $conn->prepare($completion_sql);
-    $completion_stmt->bind_param("i", $teacher_id);
 }
 
 $completion_sql .= " GROUP BY sec.section_id";
+
+$completion_stmt = $conn->prepare($completion_sql);
+
+if ($selected_section) {
+    $completion_stmt->bind_param("ii", $teacher_id, $selected_section);
+} else {
+    $completion_stmt->bind_param("i", $teacher_id);
+}
+
 $completion_stmt->execute();
 $completion_rates = $completion_stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 $completion_stmt->close();
@@ -615,7 +634,7 @@ $progress_stmt->close();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="../../assets/css/teacher/reports.css">
+    <link rel="stylesheet" href="../assets/css/teacher/reports.css">
 </head>
 
 <body>
@@ -1298,7 +1317,7 @@ $progress_stmt->close();
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="../../assets/js/teacher/sidebar.js"></script>
+    <script src="../assets/js/teacher/sidebar.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const learnerCategoryChart = document.getElementById('learnerCategoryChart');

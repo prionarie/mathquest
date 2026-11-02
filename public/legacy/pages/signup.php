@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 session_start();
-require '../../config/dbcon.php';
+require __DIR__ . '/../config/dbcon.php';
 
 $success = '';
 $error = '';
@@ -60,7 +60,7 @@ $conn->close();
     <title>Sign Up | MathQuest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/signup.css">
+    <link rel="stylesheet" href="../assets/css/signup.css">
 </head>
 
 <body>
@@ -216,13 +216,13 @@ $conn->close();
                 </div>
 
                 <div class="form-footer">
-                    <p>MathQuest © 2025 | [PLACEHOLDER] Elementary School</p>
+                    <p>MathQuest © 2025 | Mapaniqui Elementary School</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="../../assets/js/teacher/signup.js"></script>
+    <script src="../assets/js/teacher/signup.js"></script>
 </body>
 
 </html>

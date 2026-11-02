@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathQuest | [PLACEHOLDER] Elementary Grade 3</title>
+    <title>MathQuest | Mapaniqui Elementary Grade 6</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/index.css">
@@ -39,7 +39,7 @@
         <div class="floating-shape shape-2"></div>
         <div class="container">
             <h1>Start Your <span class="floating">Math Quest</span> Today</h1>
-            <p class="hero-subtitle">A gamified learning platform designed for Grade 3 students at [PLACEHOLDER] Elementary School. Transform mathematics into an exciting adventure with interactive quizzes, levels and badge rewards!</p>
+            <p class="hero-subtitle">A gamified learning platform designed for Grade 6 students at Mapaniqui Elementary School. Transform mathematics into an exciting adventure with interactive quizzes, levels and badge rewards!</p>
             <div class="hero-buttons">
                 <button class="primary-btn pulse">
                     <i class="fas fa-play-circle"></i> Log In
@@ -50,8 +50,8 @@
                     <img src="../../assets/imgs/logo.png" alt="School Logo">
                 </div>
                 <div>
-                    <h3 style="color: var(--dark-text);">[PLACEHOLDER] Elementary School</h3>
-                    <p style="color: var(--muted-text);">Designed in collaboration with<br>Grade 3 mathematics teachers</p>
+                    <h3 style="color: var(--dark-text);">Mapaniqui Elementary School</h3>
+                    <p style="color: var(--muted-text);">Designed in collaboration with<br>Grade 6 mathematics teachers</p>
                 </div>
             </div>
         </div>
@@ -189,7 +189,7 @@
                         </div>
                         <div class="logo-text">MathQuest</div>
                     </div>
-                    <p style="color: #CBD5E0;">Gamified mathematics education platform for<br>Grade 3 students of [PLACEHOLDER] Elementary School.</p>
+                    <p style="color: #CBD5E0;">Gamified mathematics education platform for<br>Grade 6 students of Mapaniqui Elementary School.</p>
 
                     <div class="school-badge" style="margin-top: 30px; background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2);">
                         <div class="badge-icon" style="color: white;">
@@ -204,12 +204,12 @@
                 <div>
                     <h3 class="footer-heading">Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Pulong Balon, [PLACEHOLDER], Candaba, Pampanga</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Pulong Balon, Mapaniqui, Candaba, Pampanga</li>
                         <li><i class="fas fa-envelope"></i> 105940@deped.gov.ph</li>
                          <li>
                             <i class="fab fa-facebook"></i>
-                            <a href="https://www.facebook.com/[PLACEHOLDER]" style="color: #CBD5E0; margin-left: 5px;">
-                                facebook.com/[PLACEHOLDER]es
+                            <a href="https://www.facebook.com/Mapaniqui" style="color: #CBD5E0; margin-left: 5px;">
+                                facebook.com/Mapaniquies
                             </a>
                         </li>
                     </ul>
@@ -217,7 +217,7 @@
             </div>
 
             <div class="copyright">
-                <p>MathQuest © 2025 | [PLACEHOLDER] Elementary School</p>
+                <p>MathQuest © 2025 | Mapaniqui Elementary School</p>
             </div>
         </div>
     </footer>

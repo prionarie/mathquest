@@ -180,7 +180,7 @@ $stmt->close();
 
                 <body data-username="<?= htmlspecialchars($_SESSION['student_name'] ?? 'Student') ?>">
                     <h2 id="welcome-message">Welcome to Math Quest</h2>
-                    <p>Start your learning journey in Grade 3 Mathematics with MathQuest.<br>Study lessons, answer quizzes, level up and earn badges!</p>
+                    <p>Start your learning journey in Grade 6 Mathematics with MathQuest.<br>Study lessons, answer quizzes, level up and earn badges!</p>
             </div>
 
             <header class="top-header">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../config/dbcon.php';
+require '../config/dbcon.php';
 
 if (!isset($_SESSION['teacher_id'])) {
     header('Location: logout.php');
@@ -180,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
     <title>Profile Settings | MathQuest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/teacher/profile.css">
+    <link rel="stylesheet" href="../assets/css/teacher/profile.css">
 </head>
 
 <body>
@@ -374,8 +374,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
     </div>
     </main>
     </div>
-    <script src="../../assets/js/teacher/sidebar.js"></script>
-    <script src="../../assets/js/teacher/profile.js"></script>
+    <script src="../assets/js/teacher/sidebar.js"></script>
+    <script src="../assets/js/teacher/profile.js"></script>
 </body>
 
 </html>

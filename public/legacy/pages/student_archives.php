@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../config/dbcon.php';
+require '../config/dbcon.php';
 
 if (!isset($_SESSION['teacher_id'])) {
     header('Location: logout.php');
@@ -100,7 +100,7 @@ if ($stmt) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/teacher/sections.css">
+    <link rel="stylesheet" href="../assets/css/teacher/sections.css">
 </head>
 
 <body>
@@ -226,8 +226,8 @@ if ($stmt) {
             </div>
         </main>
     </div>
-    <script src="../../assets/js/teacher/sidebar.js"></script>
-    <script src="../../assets/js/teacher/sections.js"></script>
+    <script src="../assets/js/teacher/sidebar.js"></script>
+    <script src="../assets/js/teacher/sections.js"></script>
 </body>
 
 </html>

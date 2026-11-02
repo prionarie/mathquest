@@ -653,11 +653,6 @@ footer {
     }
 }
 
-.floating {
-    animation: float 5s ease-in-out infinite;
-    display: inline-block;
-}
-
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(74, 108, 247, 0.7);
