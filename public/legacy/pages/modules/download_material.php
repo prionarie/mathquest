@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../../config/dbcon.php';
+require '../../config/dbcon.php';
 
 if (!isset($_SESSION['teacher_id'])) {
     header("Location: ../login.php");
