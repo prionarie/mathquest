@@ -8,7 +8,7 @@ Retrospectively, the conceptual level design of this project was the spiritual p
 
 ## 1. Key Features
 
-#### 1.1. Managing Students and Sections
+### 1.1. Managing Students and Sections
 
 - Teachers can create sections with an assigned school year.
 - Inside a section, they can create students by adding their name and learner reference number (LRN).
@@ -17,14 +17,14 @@ Retrospectively, the conceptual level design of this project was the spiritual p
 
 ![Students and Sections](/screenshots/1.png)
 
-#### 1.2. Learning Materials
+### 1.2. Learning Materials
 
 - Teachers can upload learning materials that students can view. Creating a learning material must include its title, quarter, week, material type (module, presentation, video, image, or URL link), description, and uploaded file/link.
 - They can set the current quarter and week, and the learning materials assigned for that period will be highlighted above the selection filter form.
 
 ![Learning Materials](/screenshots/2.png)
 
-#### 1.3. Creating Quizzes
+### 1.3. Creating Quizzes
 
 - Teachers can create quizzes and assign them to students according to their learning categories.
 - Teachers must select the quiz type, and each difficulty level will be assigned to students in the respective learning categories, i.e., "Easy Level" for "Slow Learners."
@@ -35,14 +35,14 @@ Retrospectively, the conceptual level design of this project was the spiritual p
 
 ![Quizzes](/screenshots/3.png)
 
-#### 1.4. Performance Reports
+### 1.4. Performance Reports
 
 - Summary reports on student performance can be generated for every week or the entire quarter. This includes the selected sections' overall average score proficiency in quizzes, learner category distribution, average score proficiency per learning category, and a weekly performance graph.
 - It also lists of the top 5 highest performing students and 5 lowest performing students, quiz completion rates for each section, difficulty analysis calculating the difficulty of quizzes (as opposed to what's set by the teacher), and, lastly, recommendations for each learning category.
 
 ![Performance Reports](/screenshots/4.png)
 
-## 1.5. Learning Categories and Points System
+### 1.5. Learning Categories and Points System
 
 **1.5.1. Learner Ability Computation:** The system uses an Elo rating system to model each learner's ability. Each learner has an ability rating **Θ**, and each question has a difficulty rating **b** on the same scale:
 
