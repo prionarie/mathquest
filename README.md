@@ -1,20 +1,14 @@
 # MathQuest: Gamified Elementary Mathematics Learning Management System
 
-MathQuest is a web-based learning management system and quiz application designed for elementary levels. This application was intended for Grade 6 teachers and students at Mapaniqui Elementary School. It was built using Laravel framework and then deployed on Hostinger, where I served as the backend and architecture lead.
+MathQuest is a web-based learning management system and quiz application designed for elementary education. This application was intended for Grade 6 teachers and students at Mapaniqui Elementary School. It was built using Laravel framework and then deployed on Hostinger, where I served as the backend and architecture lead.
 
 Retrospectively, the conceptual level design of this project was the spiritual predecessor of our Capstone Project - an educational decision support system for senior high school level General Science. [You can view information about it here.](https://github.com/prionarie/scienteach-doc)
 
 ![Teacher Home Dashboard](/screenshots/0.png)
 
-## 1. Project Status
-- I am rebuilding this project to deepen my foundations in full-stack development by handling routing, ORM, authorization, and migrations end-to-end from scratch.
-- I isolated the functional legacy code inside the `project/legacy/` folder to serve as a reference during the strangler fig process.
-- I also took this opportunity to learn and apply Laravel Sail - Laravel's official Docker integration. With Docker containerization, the application becomes fully reproducible, reflecting professional development environments.
-- **Key Goals:** Docker containerization via Laravel Sail, and configuration for cloud deployment (Azure/AWS/GCP)
+## 1. Key Features
 
-## 2. Key Features
-
-#### 2.1. Managing Students and Sections
+#### 1.1. Managing Students and Sections
 
 - Teachers can create sections with an assigned school year.
 - Inside a section, they can create students by adding their name and learner reference number (LRN).
@@ -23,14 +17,14 @@ Retrospectively, the conceptual level design of this project was the spiritual p
 
 ![Students and Sections](/screenshots/1.png)
 
-#### 2.2. Learning Materials
+#### 1.2. Learning Materials
 
 - Teachers can upload learning materials that students can view. Creating a learning material must include its title, quarter, week, material type (module, presentation, video, image, or URL link), description, and uploaded file/link.
 - They can set the current quarter and week, and the learning materials assigned for that period will be highlighted above the selection filter form.
 
 ![Learning Materials](/screenshots/2.png)
 
-#### 2.3. Creating Quizzes
+#### 1.3. Creating Quizzes
 
 - Teachers can create quizzes and assign them to students according to their learning categories.
 - Teachers must select the quiz type, and each difficulty level will be assigned to students in the respective learning categories, i.e., "Easy Level" for "Slow Learners."
@@ -41,16 +35,16 @@ Retrospectively, the conceptual level design of this project was the spiritual p
 
 ![Quizzes](/screenshots/3.png)
 
-#### 2.4. Performance Reports
+#### 1.4. Performance Reports
 
 - Summary reports on student performance can be generated for every week or the entire quarter. This includes the selected sections' overall average score proficiency in quizzes, learner category distribution, average score proficiency per learning category, and a weekly performance graph.
 - It also lists of the top 5 highest performing students and 5 lowest performing students, quiz completion rates for each section, difficulty analysis calculating the difficulty of quizzes (as opposed to what's set by the teacher), and, lastly, recommendations for each learning category.
 
 ![Performance Reports](/screenshots/4.png)
 
-## 3. Learning Categories and Points System
+## 1.5. Learning Categories and Points System
 
-**3.1. Learner Ability Computation:** The system uses an Elo rating system to model each learner's ability. Each learner has an ability rating **Θ**, and each question has a difficulty rating **b** on the same scale:
+**1.5.1. Learner Ability Computation:** The system uses an Elo rating system to model each learner's ability. Each learner has an ability rating **Θ**, and each question has a difficulty rating **b** on the same scale:
 
 | Difficulty | b (Elo) |
 |------------|---------|
@@ -84,7 +78,7 @@ P = 1 / (1 + 10^((b - Θ) / 400))
 - `(R − P)` is the prediction error: correct answers raise `Θ`, incorrect answers lower it.
 - `k = 25` is the learning rate (K-factor), within the standard 20–30 range.
 
-**3.2. Learner Categories:** After each update, `Θ` is compared against the cohort mean `μ` and standard deviation `σ` to classify the learner:
+**1.5.2. Learner Categories:** After each update, `Θ` is compared against the cohort mean `μ` and standard deviation `σ` to classify the learner:
 
 ```
 Slow Learner    = θ ≤ μ – 0.5σ
@@ -92,7 +86,7 @@ Average Learner = μ – 0.5σ < θ < μ + 0.5σ
 Fast Learner    = θ ≥ μ + 0.5σ
 ```
 
-**3.3. Points and Levels:** There are 50 levels in total, with 20 points required to advance to the next level:
+**1.5.3. Points and Levels:** There are 50 levels in total, with 20 points required to advance to the next level:
 
 ```
 33 (weeks in school year)
@@ -103,7 +97,7 @@ Fast Learner    = θ ≥ μ + 0.5σ
 990 ÷ 50 levels = 19.8 ≈ 20 points per level
 ```
 
-## 4. Tech Stack
+## 2. Tech Stack
 
 **Note:** This project is undergoing active rewrite. The original PHP application lives in the `public/legacy/` directory and is being ported to a modernized Laravel stack. Both legacy and modernized versions of the application can run during the transition period.
 
@@ -115,7 +109,13 @@ Fast Learner    = θ ≥ μ + 0.5σ
 | Frontend | Tailwind CSS |
 | Containerization | Laravel Sail on Docker |
 
-## 5. Project Structure
+## 3. Project Status
+- I am rebuilding this project to deepen my foundations in full-stack development by handling routing, ORM, authorization, and migrations end-to-end from scratch.
+- I isolated the functional legacy code inside the `project/legacy/` folder to serve as a reference during the strangler fig process.
+- I also took this opportunity to learn and apply Laravel Sail - Laravel's official Docker integration. With Docker containerization, the application becomes fully reproducible, reflecting professional development environments.
+- **Key Goals:** Docker containerization via Laravel Sail, and configuration for cloud deployment (Azure/AWS/GCP)
+
+## 4. Project Structure
 
 ```
 mathquest/
@@ -133,15 +133,15 @@ mathquest/
 └── vendor/ 
 ```
 
-## 6. Installation
+## 5. Installation
 
-### 6.1. Prerequisites
+### 5.1. Prerequisites
 
 - **Docker Desktop** (Windows/macOS) or **Docker Engine + Compose plugin** (Linux)
 - **Git**
 - **PHP** and **Composer 2**
 
-### 6.2. Setup
+### 5.2. Setup
 
 ```bash
 git clone <repo-url> mathquest
@@ -173,7 +173,7 @@ composer install --ignore-platform-reqs
 >>> DB::connection()->getPdo();
 ```
 
-### 6.3. Common Errors
+### 5.3. Common Errors
 
 - **Port conflicts:** if 80, 3306, or 5173 are taken, set `APP_PORT=8080` and/or `FORWARD_DB_PORT=3307` in `.env`.
 - **DB client (DBeaver):** `localhost:3306`, db `mathquest`, user `sail`, password `password`. Add `allowPublicKeyRetrieval=true` and `useSSL=false` in driver properties if it refuses.
