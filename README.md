@@ -58,7 +58,7 @@ Variables:
 - **k** = learning rate / K-factor = 25 (standard range 20–30)
 - **b** = difficulty rating of the question
 
-**A. Expected probability of a correct answer according to learner ability**
+- Expected probability of a correct answer according to learner ability:
 
 ```
 P = 1 / (1 + 10^((b - Θ) / 400))
@@ -68,7 +68,7 @@ P = 1 / (1 + 10^((b - Θ) / 400))
 - Higher `Θ` (stronger learner) or lower `b` (easier question) → `P` rises toward 1.
 - `400` is the standard Elo scale constant.
 
-**B. Learner ability updates after each correct or wrong answer in a quiz**
+- Learner ability updates after each correct or wrong answer in a quiz:
 
 ```
 Θ ← Θ + k(R - P),    k = 25
