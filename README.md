@@ -10,7 +10,7 @@ Retrospectively, the conceptual level design of this project was the spiritual p
 - I am rebuilding this project to deepen my foundations in full-stack development by handling routing, ORM, authorization, and migrations end-to-end from scratch.
 - I isolated the functional legacy code inside the `project/legacy/` folder to serve as a reference during the strangler fig process.
 - I also took this opportunity to learn and apply Laravel Sail - Laravel's official Docker integration. With Docker containerization, the application becomes fully reproducible, reflecting professional development environments.
-- **Key Goals:** Laravel + Tailwind CSS full-stack framework, Docker containerization via Laravel Sail, and configuration for cloud deployment (Azure/AWS/GCP)
+- **Key Goals:** Docker containerization via Laravel Sail, and configuration for cloud deployment (Azure/AWS/GCP)
 
 ## 2. Key Features
 
