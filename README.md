@@ -1,16 +1,16 @@
 # MathQuest: Gamified Elementary Learning Management System
 
-MathQuest is as a web-based learning management system and quiz application designed for elementary levels. This application was intended for Grade 6 teachers and students in Mapaniqui Elementary School. It was built using Laravel framework then deployed on Hostinger, where I served as the backend and architecture lead.
+MathQuest is a web-based learning management system and quiz application designed for elementary levels. This application was intended for Grade 6 teachers and students at Mapaniqui Elementary School. It was built using Laravel framework and then deployed on Hostinger, where I served as the backend and architecture lead.
 
 Retrospectively, the conceptual level design of this project was the spiritual predecessor of our Capstone Project - an educational decision support system for senior high school level General Science. [You can view information about it here.](https://github.com/prionarie/scienteach-doc)
 
 ![Teacher Home Dashboard](/screenshots/0.png)
 
 ## 1. Project Status
-- I am rebuilding this project to deepen my foundations in full-stack development by handling routing, ORM, authorization, and migrations end to end from scratch.
-- I isolated the functional legacy code inside the `project/legacy/` folder to serve as reference during the strangler fig progress.
-- I also took this opportunity to learn and apply Laravel Sail - Laravel's official Docker integration. With Docker containerization, the application becomes entirely reproducible, which reflects professional development environments.
-- **Key Goals:** Laravel + Tailwind CSS full-stack framework, Docker containerization via Laravel Sail, and configure for cloud deployment (Azure/AWS/GCP)
+- I am rebuilding this project to deepen my foundations in full-stack development by handling routing, ORM, authorization, and migrations end-to-end from scratch.
+- I isolated the functional legacy code inside the `project/legacy/` folder to serve as a reference during the strangler fig process.
+- I also took this opportunity to learn and apply Laravel Sail - Laravel's official Docker integration. With Docker containerization, the application becomes fully reproducible, reflecting professional development environments.
+- **Key Goals:** Laravel + Tailwind CSS full-stack framework, Docker containerization via Laravel Sail, and configuration for cloud deployment (Azure/AWS/GCP)
 
 ## 2. Key Features
 
@@ -18,32 +18,32 @@ Retrospectively, the conceptual level design of this project was the spiritual p
 
 - Teachers can create sections with an assigned school year.
 - Inside a section, they can create students by adding their name and learner reference number (LRN).
-- The system will generate a six-digit passcode which the students will use the log in along with their LRN.
-- The student list also displays the learning category of each student. Teachers can view each student's profile which displays their learning progress summary across the school year.
+- The system will generate a six-digit passcode that students will use to log in along with their LRN.
+- The student list also displays the learning category of each student. Teachers can view each student's profile, which displays their learning progress summary across the school year.
 
 ![Students and Sections](/screenshots/1.png)
 
 #### 2.2. Learning Materials
 
-- Teachers can upload learning materials which students can view. Creating a learning material must include its title, quarter, week, material type (module, presentation, video, image, or URL link), description, and uploaded file/link.
+- Teachers can upload learning materials that students can view. Creating a learning material must include its title, quarter, week, material type (module, presentation, video, image, or URL link), description, and uploaded file/link.
 - They can set the current quarter and week, and the learning materials assigned for that period will be highlighted above the selection filter form.
 
 ![Learning Materials](/screenshots/2.png)
 
 #### 2.3. Creating Quizzes
 
-- Teachers can create quizzes and assign it to students according to their learning categories.
-- Teachers must select the quiz type and each difficulty level will be assigned to students in respective learning categories i.e. "Easy Level" for "Slow Learners."
+- Teachers can create quizzes and assign them to students according to their learning categories.
+- Teachers must select the quiz type, and each difficulty level will be assigned to students in the respective learning categories, i.e., "Easy Level" for "Slow Learners."
 - Adding questions includes the question text, image (optional), difficulty level (for mixed quiz type), number of points, answer options from A to D, and an optional hint which will appear after a student submits an incorrect answer 3 times.
-- Questions can be reordered with the up and down arrow keys and the question number updates dynamically.
-- After creating the questions, the teacher must assign the quiz to a section (one, multiple or all) and assign its due date.
+- Questions can be reordered with the up and down arrow keys, and the question number updates dynamically.
+- After creating the questions, the teacher must assign the quiz to a section (one, multiple, or all) and assign its due date.
 - Like in learning materials, quizzes assigned to the current quarter and week will be highlighted in the quiz catalog.
 
 ![Quizzes](/screenshots/3.png)
 
 #### 2.4. Performance Reports
 
-- Summary reports on student performance can be generated for every week or the entire quarter. This includes the selected sections' overall average score proficiency in quizzes, learner categories distribution, average score proficiency per learning category, and weekly performance graph.
+- Summary reports on student performance can be generated for every week or the entire quarter. This includes the selected sections' overall average score proficiency in quizzes, learner category distribution, average score proficiency per learning category, and a weekly performance graph.
 - It also lists of the top 5 highest performing students and 5 lowest performing students, quiz completion rates for each section, difficulty analysis calculating the difficulty of quizzes (as opposed to what's set by the teacher), and, lastly, recommendations for each learning category.
 
 ![Performance Reports](/screenshots/4.png)
