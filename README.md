@@ -1,6 +1,6 @@
-# MathQuest: Gamified Elementary Mathematics Learning Management System
+# MathQuest | Gamified Mathematics Learning Management System
 
-MathQuest is a web-based learning management system and quiz application designed for elementary education. This application was intended for Grade 6 teachers and students at Mapaniqui Elementary School. It was built using Laravel framework and then deployed on Hostinger, where I served as the backend and architecture lead.
+MathQuest is a web-based learning management system and quiz application. It's designed for elementary Mathematics education as a gamified platform with a points-based leveling system. This application was intended for Grade 6 teachers and students at Mapaniqui Elementary School. It was built using Laravel framework and then deployed on Hostinger, where I served as the backend and architecture lead.
 
 Retrospectively, the conceptual level design of this project became the spiritual predecessor of our Capstone Project - an educational decision support system for senior high school level General Science. [You can view more information about it here.](https://github.com/prionarie/scienteach-doc)
 
