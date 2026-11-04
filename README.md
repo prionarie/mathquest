@@ -99,8 +99,6 @@ Fast Learner    = θ ≥ μ + 0.5σ
 
 ## 2. Tech Stack
 
-**Note:** This project is undergoing active rewrite. The original PHP application lives in the `public/legacy/` directory and is being ported to a modernized Laravel stack. Both legacy and modernized versions of the application can run during the transition period.
-
 | Layer | Technology |
 |---|---|
 | Framework | Laravel |
@@ -108,6 +106,9 @@ Fast Learner    = θ ≥ μ + 0.5σ
 | Database | MySQL |
 | Frontend | Tailwind CSS |
 | Containerization | Laravel Sail on Docker |
+
+
+**Note:** This project is undergoing active rewrite. The original PHP application lives in the `public/legacy/` directory and is being ported to a modernized Laravel stack. Both legacy and modernized versions of the application can run during the transition period.
 
 ## 3. Project Status
 - I am rebuilding this project to deepen my foundations in full-stack development by handling routing, ORM, authorization, and migrations end-to-end from scratch.
