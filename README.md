@@ -2,7 +2,7 @@
 
 MathQuest is a web-based learning management system and quiz application designed for elementary education. This application was intended for Grade 6 teachers and students at Mapaniqui Elementary School. It was built using Laravel framework and then deployed on Hostinger, where I served as the backend and architecture lead.
 
-Retrospectively, the conceptual level design of this project was the spiritual predecessor of our Capstone Project - an educational decision support system for senior high school level General Science. [You can view information about it here.](https://github.com/prionarie/scienteach-doc)
+Retrospectively, the conceptual level design of this project became the spiritual predecessor of our Capstone Project - an educational decision support system for senior high school level General Science. [You can view more information about it here.](https://github.com/prionarie/scienteach-doc)
 
 ![Teacher Home Dashboard](/screenshots/0.png)
 
@@ -105,8 +105,8 @@ Fast Learner    = θ ≥ μ + 0.5σ
 | Backend | PHP |
 | Database | MySQL |
 | Frontend | Tailwind CSS |
-| Containerization | Laravel Sail on Docker |
-
+| Testing | PHPUnit
+| Containerization | Laravel Sail (Docker) |
 
 **Note:** This project is undergoing active rewrite. The original PHP application lives in the `public/legacy/` directory and is being ported to a modernized Laravel stack. Both legacy and modernized versions of the application can run during the transition period.
 
