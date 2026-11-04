@@ -104,7 +104,7 @@ Fast Learner    = θ ≥ μ + 0.5σ
 | Framework | Laravel |
 | Backend | PHP |
 | Database | MySQL |
-| Frontend | Tailwind CSS |
+| Frontend | JavaScript, Tailwind CSS |
 | Testing | PHPUnit, Playwright |
 | Containerization | Laravel Sail (Docker) |
 
