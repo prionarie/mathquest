@@ -105,7 +105,7 @@ Fast Learner    = θ ≥ μ + 0.5σ
 | Backend | PHP |
 | Database | MySQL |
 | Frontend | Tailwind CSS |
-| Testing | PHPUnit
+| Testing | PHPUnit, Playwright |
 | Containerization | Laravel Sail (Docker) |
 
 **Note:** This project is undergoing active rewrite. The original PHP application lives in the `public/legacy/` directory and is being ported to a modernized Laravel stack. Both legacy and modernized versions of the application can run during the transition period.
